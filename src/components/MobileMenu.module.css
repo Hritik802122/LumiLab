@@ -1,0 +1,42 @@
+/* src/components/MobileMenu.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  /* Use a semi-transparent version of the main background */
+  background-color: rgba(2, 6, 23, 0.6); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* For Safari */
+  z-index: 100; /* Must be below the header controls but above everything else */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Light theme override for the overlay background */
+:root:not(.dark) .overlay {
+    background-color: rgba(241, 245, 249, 0.6); /* slate-100/60 */
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Generous spacing for easy tapping */
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: var(--foreground); /* Use theme color for text */
+  font-size: 2rem; /* Large, clear font */
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.navButton:hover {
+    color: var(--violet-400); /* Use accent color on hover */
+    transform: scale(1.05);
+}

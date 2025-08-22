@@ -4,18 +4,20 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  background-color: var(--header-bg); /* Use theme variable */
+  z-index: 110; /* Highest z-index to ensure it's on top of the menu */
+  background-color: var(--header-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* When menu is open, make header bar transparent so only controls are visible */
+.headerOpen {
+    background-color: transparent;
+    border-bottom-color: transparent;
 }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
 @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
 @media (min-width: 1024px) { .container { padding: 0 2rem; } }
 
@@ -32,66 +34,32 @@
   gap: 0.5rem;
   text-decoration: none;
 }
-.logoImage {
-    width: 2rem;
-    height: 2rem;
-}
-.logoText {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--foreground);
-}
+.logoImage { width: 2rem; height: 2rem; }
+.logoText { font-weight: 700; font-size: 1.25rem; color: var(--foreground); }
 
+/* DESKTOP NAVIGATION */
 .nav {
-  display: none;
+  display: none; /* THE FIX: Completely hide on mobile */
 }
 @media (min-width: 768px) {
   .nav {
-    display: flex;
+    display: flex; /* Show on desktop */
     align-items: center;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
+.navLink { color: var(--muted-foreground); text-decoration: none; transition: color 0.2s; position: relative; z-index: 1; background: none; border: none; cursor: pointer; padding: 0; font-size: 1rem; font-family: inherit; }
+.navLink:hover, .navLinkActive { color: var(--foreground); }
+.navLink span { padding: 0.5rem 0.75rem; display: block; }
+.activeIndicator { position: absolute; top: 50%; transform: translateY(-50%); height: 2.25rem; background-color: var(--active-indicator-bg); border-radius: 9999px; z-index: -1; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
-.navLink {
-  color: var(--muted-foreground);
-  text-decoration: none;
-  transition: color 0.2s;
-  position: relative;
-  z-index: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 1rem;
-  font-family: inherit;
-}
-.navLink:hover, .navLinkActive {
-  color: var(--foreground);
-}
-/* THE FIX: Apply padding to the inner span */
-.navLink span {
-    padding: 0.5rem 0.75rem;
-    display: block;
-}
-
-
-/* Active link sliding indicator */
-.activeIndicator {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 2.25rem;
-    background-color: var(--active-indicator-bg);
-    border-radius: 9999px;
-    z-index: 0;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
+/* RIGHT-SIDE CONTROLS */
 .controlsContainer {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .mobileMenuButton {
@@ -100,6 +68,9 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0.5rem;
 }
 .mobileMenuButton:hover { color: var(--foreground); }
-@media (min-width: 768px) { .mobileMenuButton { display: none; } }
+@media (min-width: 768px) {
+  .mobileMenuButton { display: none; }
+}

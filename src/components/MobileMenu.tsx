@@ -1,11 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import styles from './MobileMenu.module.css';
 
 const navLinks = [
-  { href: '#intro', label: 'Intro' },
-  { href: '#mirrors', label: 'Mirrors' },
-  { href: '#lenses', label: 'Lenses' },
-  { href: '#practice', label: 'Practice' },
-  { href: '#summary', label: 'Summary' },
+  { id: 'home', label: 'Home'},
+  { id: 'intro', label: 'Intro' },
+  { id: 'mirrors', label: 'Mirrors' },
+  { id: 'lenses', label: 'Lenses' },
+  { id: 'funfacts', label: 'Facts' },
+  { id: 'practice', label: 'Practice' },
+  { id: 'summary', label: 'Summary' },
 ];
 
 interface MobileMenuProps {
@@ -13,28 +16,55 @@ interface MobileMenuProps {
   setIsOpen: (isOpen: boolean) => void;
 }
 
+const menuVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
+    exit: { opacity: 0, transition: { duration: 0.2, ease: "easeIn" } },
+};
+
+const navContainerVariants = {
+    hidden: { },
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+
+const navItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 25 } },
+};
+
 const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
+  const handleNavClick = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-16 left-0 right-0 bg-slate-900 border-b border-slate-800"
+          className={styles.overlay}
+          variants={menuVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
-          <nav className="flex flex-col items-center space-y-4 py-4">
+          <motion.nav
+            className={styles.nav}
+            variants={navContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-slate-300 hover:text-white transition-colors text-lg"
-                onClick={() => setIsOpen(false)}
+              <motion.button
+                key={link.id}
+                variants={navItemVariants}
+                onClick={() => handleNavClick(link.id)}
+                className={styles.navButton}
               >
                 {link.label}
-              </a>
+              </motion.button>
             ))}
-          </nav>
+          </motion.nav>
         </motion.div>
       )}
     </AnimatePresence>
