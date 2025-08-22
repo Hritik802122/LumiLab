@@ -10,7 +10,7 @@ interface RayParams {
   v: number;
   imageHeight: number;
   elementType: 'mirror' | 'lens';
-  subtype: 'concave' | 'convex';
+  subtype: 'concave' | 'convex'; // The type definition can stay
 }
 
 interface RayPath {
@@ -19,8 +19,9 @@ interface RayPath {
   color: string;
 }
 
-export const getRayPaths = ({ u, f, h, v, imageHeight, elementType, subtype }: RayParams): RayPath[] => {
-  const objX = ORIGIN_X - u;
+// THE FIX: The 'subtype' parameter has been removed from the function's deconstructed arguments.
+export const getRayPaths = ({ u, f, h, v, imageHeight, elementType }: RayParams): RayPath[] => {
+  const objX = ORIGIN_X + u;
   const objY = ORIGIN_Y - h;
   const imgX = ORIGIN_X + v;
   const imgY = ORIGIN_Y - imageHeight;
