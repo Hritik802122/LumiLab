@@ -1,0 +1,105 @@
+/* src/components/Header.module.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: var(--header-bg); /* Use theme variable */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .container { padding: 0 2rem; } }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.logoImage {
+    width: 2rem;
+    height: 2rem;
+}
+.logoText {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.navLink {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.navLink:hover, .navLinkActive {
+  color: var(--foreground);
+}
+/* THE FIX: Apply padding to the inner span */
+.navLink span {
+    padding: 0.5rem 0.75rem;
+    display: block;
+}
+
+
+/* Active link sliding indicator */
+.activeIndicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.25rem;
+    background-color: var(--active-indicator-bg);
+    border-radius: 9999px;
+    z-index: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.controlsContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mobileMenuButton {
+  display: block;
+  color: var(--muted-foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobileMenuButton:hover { color: var(--foreground); }
+@media (min-width: 768px) { .mobileMenuButton { display: none; } }

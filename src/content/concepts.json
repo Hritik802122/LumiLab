@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Laws of Reflection",
+    "description": "The angle of incidence equals the angle of reflection. The incident ray, reflected ray, and the normal all lie in the same plane.",
+    "icon": "reflection",
+    "tooltip": "This is why you see a clear image in a calm lake!"
+  },
+  {
+    "id": 2,
+    "title": "Spherical Mirrors",
+    "description": "Curved mirrors that form images by reflection. Concave mirrors converge light, while convex mirrors diverge it.",
+    "icon": "reflection",
+    "tooltip": "Used in car headlights (concave) and side-view mirrors (convex)."
+  },
+  {
+    "id": 3,
+    "title": "Laws of Refraction (Snell's Law)",
+    "description": "Light bends when it passes from one medium to another. The ratio of the sines of the angles of incidence and refraction is constant.",
+    "icon": "refraction",
+    "tooltip": "This is why a straw in a glass of water looks bent."
+  },
+  {
+    "id": 4,
+    "title": "Spherical Lenses",
+    "description": "Transparent materials with curved surfaces that form images by refraction. Convex lenses converge light, concave lenses diverge it.",
+    "icon": "refraction",
+    "tooltip": "The core of cameras, telescopes, and eyeglasses."
+  }
+]

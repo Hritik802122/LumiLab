@@ -1,0 +1,55 @@
+/* src/routes/OpticsIntro.module.css */
+.container {
+  width: 100%;
+  max-width: 1024px;
+}
+
+/* Use global classes for consistency */
+/* .title and .subtitle are now handled by .sectionTitle and .sectionSubtitle in index.css */
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.75rem;
+  background-color: rgba(71, 85, 105, 0.3);
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
+.cardContent {
+  flex-grow: 1;
+}
+
+/* THE FIX for TYPOGRAPHY */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700; /* Bold */
+  color: white; /* White color */
+}
+
+.cardDescription {
+  color: #cbd5e1; /* slate-300 */
+  margin-top: 0.5rem;
+  line-height: 1.6; /* More readable line spacing */
+}

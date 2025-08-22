@@ -1,0 +1,139 @@
+/* src/components/Quiz.module.css */
+
+/* Main container for the quiz content */
+.quizContainer {
+  width: 100%;
+  max-width: 768px; /* Optimal width for reading */
+  margin: 0 auto;
+}
+
+.quizHeader {
+  text-align: right;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* The main card holding the question */
+.quizItem {
+  padding: 2.5rem;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--card-foreground);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.optionsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.optionButton {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--button-secondary-bg);
+  color: var(--muted-foreground);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.optionButton:not(:disabled):hover {
+  border-color: var(--violet-400);
+  color: var(--foreground);
+  transform: translateY(-2px);
+}
+.optionButton:disabled {
+  cursor: not-allowed;
+}
+
+.correct {
+  background-color: var(--green-400) !important;
+  border-color: var(--green-400) !important;
+  color: white !important;
+  transform: scale(1.02);
+}
+
+.incorrect {
+  background-color: var(--rose-400) !important;
+  border-color: var(--rose-400) !important;
+  color: white !important;
+}
+
+.feedbackPanel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: left;
+}
+.feedbackPanelCorrect {
+  background-color: rgba(74, 222, 128, 0.1);
+}
+.feedbackPanelIncorrect {
+  background-color: rgba(251, 113, 133, 0.1);
+}
+
+.feedbackTitle {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.feedbackTitleCorrect {
+  color: var(--green-400);
+}
+.feedbackTitleIncorrect {
+  color: var(--rose-400);
+}
+
+.feedbackExplanation {
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.buttonContainer {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+/* Styles for the final Result Panel */
+.resultPanel {
+  padding: 3rem;
+  text-align: center;
+}
+.resultTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--violet-400);
+  margin-bottom: 1rem;
+}
+.resultScoreText {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+}
+.resultScoreNumber {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 1rem 0;
+  color: var(--foreground);
+}
+.progressBarContainer {
+  width: 100%;
+  background-color: var(--button-secondary-bg);
+  border-radius: 9999px;
+  height: 1rem;
+  margin: 2rem 0;
+  overflow: hidden; /* Ensure inner bar is clipped */
+}
+.progressBar {
+  background-image: var(--gradient-primary);
+  height: 1rem;
+  border-radius: 9999px;
+}

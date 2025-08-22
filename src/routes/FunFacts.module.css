@@ -1,0 +1,50 @@
+/* src/routes/FunFacts.module.css */
+.container {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.factCard {
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--sky-400);
+}
+
+.cardNumber {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 6rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    z-index: 0;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.factCard:hover .cardNumber {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.factCard p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #cbd5e1; /* slate-300 */
+}

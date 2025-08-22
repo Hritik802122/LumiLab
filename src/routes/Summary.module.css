@@ -1,0 +1,96 @@
+/* src/routes/Summary.module.css */
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.printButtonContainer {
+    margin-top: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: left;
+}
+
+.section {
+    /* For animation targeting */
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--foreground);
+}
+
+.formulaGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Fully responsive */
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: 2rem;
+  height: 100%; /* Make cards in the same row equal height */
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--sky-400);
+}
+
+.list {
+  list-style-type: disc;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.mistakesCard {
+  border-left: 4px solid var(--rose-400);
+  padding: 2rem;
+}
+.mistakesList {
+  list-style-type: 'X  ';
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--rose-400);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+@media print {
+  .printButtonContainer {
+    display: none;
+  }
+}

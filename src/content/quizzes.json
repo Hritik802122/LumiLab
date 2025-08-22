@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "type": "mcq",
+    "question": "Which type of mirror is used as a rear-view mirror in vehicles?",
+    "options": ["Concave mirror", "Convex mirror", "Plane mirror", "Parabolic mirror"],
+    "answer": "Convex mirror",
+    "explanation": "Convex mirrors provide a wider field of view and always form an upright, diminished, virtual image."
+  },
+  {
+    "id": 2,
+    "type": "mcq",
+    "question": "An object is placed at the center of curvature (C) of a concave mirror. The image formed is:",
+    "options": ["Real, inverted, and same size", "Virtual, upright, and magnified", "Real, inverted, and diminished", "No image is formed"],
+    "answer": "Real, inverted, and same size",
+    "explanation": "When u = 2f (at C), the image is also formed at C, and the magnification is -1 (real, inverted, same size)."
+  },
+  {
+    "id": 3,
+    "type": "numerical",
+    "question": "A convex lens has a focal length of 10 cm. An object is placed 30 cm in front of it. What is the image distance (v) in cm?",
+    "answer": 15,
+    "explanation": "Using the lens formula 1/v - 1/u = 1/f. Here, f=+10, u=-30. So, 1/v = 1/10 + 1/(-30) = (3-1)/30 = 2/30. Thus, v = 30/2 = +15 cm."
+  },
+  {
+    "id": 4,
+    "type": "mcq",
+    "question": "The phenomenon of light bending as it passes from air to water is called:",
+    "options": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+    "answer": "Refraction",
+    "explanation": "Refraction is the change in direction of a wave passing from one medium to another."
+  },
+  {
+    "id": 5,
+    "type": "mcq",
+    "question": "A virtual image larger than the object can be formed by a:",
+    "options": ["Convex mirror", "Concave lens", "Concave mirror", "Plane mirror"],
+    "answer": "Concave mirror",
+    "explanation": "Only a concave mirror can form a magnified virtual image, which happens when the object is placed between the pole and the focus."
+  },
+  {
+    "id": 6,
+    "type": "mcq",
+    "question": "According to the New Cartesian Sign Convention, the focal length of a convex mirror is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": "Negative",
+    "explanation": "Diverging elements like convex mirrors and concave lenses have a negative focal length by convention."
+  },
+  {
+    "id": 7,
+    "type": "mcq",
+    "question": "If the magnification (m) of an image is -0.5, the image is:",
+    "options": ["Real and magnified", "Virtual and diminished", "Real and diminished", "Virtual and magnified"],
+    "answer": "Real and diminished",
+    "explanation": "A negative magnification means the image is real and inverted. A magnitude less than 1 (|m| < 1) means the image is diminished."
+  },
+  {
+    "id": 8,
+    "type": "challenge",
+    "question": "For a concave mirror, where should you place the object to get an image of the exact same size (|m|=1)? The answer is the distance from the mirror.",
+    "answer": "At the Center of Curvature (C)",
+    "explanation": "When the object is placed at the center of curvature (u = 2f), the image is also formed at 2f. This results in a magnification of m = -v/u = -(2f)/(2f) = -1. The magnitude is 1."
+  }
+]

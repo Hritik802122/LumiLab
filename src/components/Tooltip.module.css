@@ -1,0 +1,67 @@
+/* src/components/Tooltip.module.css */
+.tooltipContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tooltipButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #334155; /* slate-700 */
+  border-radius: 9999px;
+  color: #94a3b8; /* slate-400 */
+  font-weight: 700;
+  cursor: help;
+  border: none;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.tooltipButton:hover {
+  background-color: #475569; /* slate-600 */
+  color: white;
+  transform: scale(1.1);
+}
+
+.tooltipBox {
+  position: absolute;
+  bottom: 150%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  padding: 1rem;
+  background-color: #020617; /* slate-950 */
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, bottom 0.2s ease;
+}
+
+.tooltipContainer:hover .tooltipBox,
+.tooltipContainer:focus-within .tooltipBox {
+  opacity: 1;
+  visibility: visible;
+  bottom: 125%; /* Animate upwards on hover/focus */
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #020617; /* Must match tooltipBox background */
+}

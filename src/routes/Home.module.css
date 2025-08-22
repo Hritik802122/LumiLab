@@ -1,0 +1,96 @@
+/* src/routes/Home.module.css */
+.homeContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+.highlight {
+  background-image: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.subtitle {
+  margin: 1rem auto 0 auto;
+  font-size: 1.125rem;
+  color: #cbd5e1; /* slate-300 */
+  max-width: 600px;
+  line-height: 1.75;
+}
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.ctaButton {
+  margin-top: 2.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+/* src/routes/Home.module.css */
+
+/* ... all existing styles for .homeContainer, .content, etc. are correct ... */
+.homeContainer { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; }
+.backgroundGradient { position: absolute; inset: 0; background-image: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%); z-index: 0; }
+.content { position: relative; z-index: 10; padding: 1rem; }
+.title { font-size: 3rem; font-weight: 800; color: white; letter-spacing: -0.05em; margin: 0; }
+.highlight { background-image: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (min-width: 768px) { .title { font-size: 4.5rem; } }
+.subtitle { margin: 1rem auto 0 auto; font-size: 1.125rem; color: #cbd5e1; max-width: 600px; line-height: 1.75; }
+@media (min-width: 768px) { .subtitle { font-size: 1.25rem; } }
+.ctaButton { margin-top: 2.5rem; padding: 1rem 2.5rem; font-size: 1.125rem; }
+
+
+/* NEW ANIMATED BACKGROUND STYLES */
+.particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 25s infinite ease-in-out;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10%, 90% { opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
